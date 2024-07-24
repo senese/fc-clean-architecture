@@ -23,11 +23,23 @@ describe("Unit test create product use case", () => {
     const output = await productCreateUseCase.execute(input);
 
     expect(output).toEqual({
+        type: 'a',
         id: expect.any(String),
         name: 'Product',
         price: 2,
       },
     );
+
+    input.type = 'b'
+
+    const output2 = await productCreateUseCase.execute(input);
+    expect(output2).toEqual({
+      type: 'b',
+      id: expect.any(String),
+      name: 'Product',
+      price: input.price * 2,
+    },
+  );
   });
 
   it("should thrown an error when name is missing", async () => {

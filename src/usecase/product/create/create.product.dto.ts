@@ -5,6 +5,7 @@ export interface InputCreateProductDto {
 }
 
 export interface OutputCreateProductDto {
+  type: string;
   id: string;
   name: string;
   price: number;

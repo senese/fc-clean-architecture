@@ -22,6 +22,7 @@ export default class CreateProductUseCase {
     await this.productRepository.create(product);
 
     return {
+      type: input.type,
       id: product.id,
       name: product.name,
       price: product.price
