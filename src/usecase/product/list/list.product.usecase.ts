@@ -18,9 +18,9 @@ export default class ListProductUseCase {
 }
 
 class OutputMapper {
-  static toOutput(customer: ProductInterface[]): OutputListProductDto {
+  static toOutput(product: ProductInterface[]): OutputListProductDto {
     return {
-      products: customer.map((product) => ({
+      products: product.map((product) => ({
         id: product.id,
         name: product.name,
         price: product.price
